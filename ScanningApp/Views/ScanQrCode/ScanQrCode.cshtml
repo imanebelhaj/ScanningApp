@@ -1,0 +1,75 @@
+﻿
+
+@model ScanningApp.Models.User
+@{
+    ViewData["Title"] = "HomePage";
+    // Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan QR Code</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('images/background.png');
+            /* background-repeat: repeat; */
+            /* Centrez l'image horizontalement et verticalement */
+             background-position: center; 
+            /* Fixez l'image d'arrière-plan pendant le défilement */
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            margin-top:180px;
+            width:90%;
+            opacity: 0.97;
+            height:400px;
+
+           
+                    
+        } 
+
+        .btn {
+
+            width:200px; /* Set button background color to black */
+        }
+
+        /* .left-black-space {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background-color: black;
+            opacity: 0.5;
+            z-index: -1; 
+        } */
+    </style>
+</head>
+<body>
+    <div class="left-black-space">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Scan QR Code</h1>
+                        <form method="post" asp-controller="ScanQrCode" asp-action="ScanQrCode">
+                            <div class="form-group">
+                                <label for="qrCode">Enter QR Code:</label>
+                                <input type="text" id="qrCode" name="qrCode" class="form-control" required />
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
