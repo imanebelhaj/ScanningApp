@@ -15,7 +15,7 @@
 <ol>
   <li>The QR code is not scanned twice (Date Last Scan ≠ NULL && QR Exists).</li>
   <li>The QR code is scanned for the first time, allowing the participant to enter the event successfully (Date Last Scan == NULL && QR Exists).</li>
-  <li>The QR code doesn't exist in the database, adding a new entry (User ID + QR Code + Date Last Scan).</li>
+  <li>The QR code doesn't exist in the database, detecting unvalid Qr, not allowing participant to enter event.</li>
 </ol>
 
 <p align="center">
